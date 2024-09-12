@@ -13,6 +13,9 @@
 **/.idea/dynamic.xml
 **/.idea/uiDesigner.xml
 
+target/
+
+
 ## File-based project format:
 *.iws
 
