@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -22,10 +23,17 @@ public class EstudianteController {
         return new ResponseEntity<>(_estudianteService.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Estudiante> obtenerEstudiante(@PathVariable("id") Integer id) throws Exception{
+        return new ResponseEntity<>(_estudianteService.findById(id), HttpStatus.OK);
+    }
+
     @PostMapping("/guardarEstudiante")
     public ResponseEntity<Estudiante> guardarEstudiante(@RequestBody Estudiante estudiante) throws Exception
     {
         return new ResponseEntity<>(_estudianteService.save(estudiante), HttpStatus.OK);
     }
+
+
 
 }
