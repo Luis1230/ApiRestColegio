@@ -131,7 +131,7 @@ public class EstudianteController {
                     ),HttpStatus.OK);
         }
     }
-
+  
     @PostMapping("/eliminarEstudiante")
     public ResponseEntity<BaseResponse<String>> actualizarEstudiante(@RequestBody RequestEliminarEstudianteDto request) throws Exception
     {
