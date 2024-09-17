@@ -162,4 +162,36 @@ public class EstudianteController {
                     ),HttpStatus.OK);
         }
     }
+
+    // Obteniendo los estudiantes ordenados de forma descendente por edad -- DerivedQueries
+    @GetMapping("/DerivedQueriesEdadDesc")
+    public ResponseEntity<BaseResponse<ResponseListarEstudianteDto>> DerivedQueriesEdadDesc() throws Exception
+    {
+        List<Estudiante> objEstudiante = _estudianteService.findByOrderByEdadDesc();
+
+        return new ResponseEntity<>( new BaseResponse<ResponseListarEstudianteDto>
+                (
+                        "0",
+                        "Consulta ejecutada con exito",
+                        "Consulta ejecutada con exito",
+                        null,
+                        _mapperUtil.mapList(objEstudiante,ResponseListarEstudianteDto.class,"")
+                ),HttpStatus.OK);
+    }
+
+    // Obteniendo los estudiantes ordenados de forma descendente por edad -- programacion funcional
+    @GetMapping("/ProgFuncionalEdadDesc")
+    public ResponseEntity<BaseResponse<ResponseListarEstudianteDto>> ProgFuncionalEdadDesc() throws Exception
+    {
+        List<Estudiante> objEstudiante = _estudianteService.estudiantesPorEdad();
+
+        return new ResponseEntity<>( new BaseResponse<ResponseListarEstudianteDto>
+                (
+                        "0",
+                        "Consulta ejecutada con exito",
+                        "Consulta ejecutada con exito",
+                        null,
+                        _mapperUtil.mapList(objEstudiante,ResponseListarEstudianteDto.class,"")
+                ),HttpStatus.OK);
+    }
 }
