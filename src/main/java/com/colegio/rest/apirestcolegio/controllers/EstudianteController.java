@@ -135,32 +135,15 @@ public class EstudianteController {
     @PostMapping("/eliminarEstudiante")
     public ResponseEntity<BaseResponse<String>> actualizarEstudiante(@RequestBody RequestEliminarEstudianteDto request) throws Exception
     {
-        Estudiante objEstudiante = _estudianteService.findById(request.getIdEstudiante());
-
-        if (objEstudiante == null)
-        {
-            return new ResponseEntity<>( new BaseResponse<String>
-                    (
-                            "E004",
-                            "El estudiante no existe",
-                            "El estudiante no existe",
-                            null,
-                            null
-                    ),HttpStatus.BAD_REQUEST);
-        }
-        else
-        {
-            boolean eliminar =  _estudianteService.delete(request.getIdEstudiante());
-
-            return new ResponseEntity<>( new BaseResponse<String>
-                    (
-                            "0",
-                            "El estudiante fue eliminado correctamente",
-                            "El estudiante fue eliminado correctamente",
-                            null,
-                            null
-                    ),HttpStatus.OK);
-        }
+        _estudianteService.delete(request.getIdEstudiante());
+        return new ResponseEntity<>( new BaseResponse<String>
+                (
+                        "0",
+                        "El estudiante fue eliminado correctamente",
+                        "El estudiante fue eliminado correctamente",
+                        null,
+                        null
+                ),HttpStatus.OK);
     }
 
     // Obteniendo los estudiantes ordenados de forma descendente por edad -- DerivedQueries

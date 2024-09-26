@@ -1,5 +1,6 @@
 package com.colegio.rest.apirestcolegio.services.impl;
 
+import com.colegio.rest.apirestcolegio.exception.ModelNotFoundException;
 import com.colegio.rest.apirestcolegio.repository.generic.IGenericRepository;
 
 import java.util.List;
@@ -32,12 +33,8 @@ public abstract class CRUD <T,ID> implements ICRUD<T,ID>{
     }
 
     @Override
-    public boolean delete(ID id) throws Exception {
-        T x = _repository().findById(id).orElse(null);
-
-        if (x != null)
-            _repository().deleteById(id);
-
-        return (x != null) ? true : false;
+    public void delete(ID id) throws Exception {
+        _repository().findById(id).orElseThrow(() -> new ModelNotFoundException("No se encontró el id: " + id));
+        _repository().deleteById(id);
     }
 }

@@ -141,32 +141,16 @@ public class CursoController {
     @PostMapping("/eliminarCurso")
     public ResponseEntity<BaseResponse<String>> actualizarCurso(@RequestBody RequestEliminarCursoDto request) throws Exception
     {
-        Curso objCurso = _cursoService.findById(request.getIdCurso());
+        _cursoService.delete(request.getIdCurso());
 
-        if (objCurso == null)
-        {
-            return new ResponseEntity<>( new BaseResponse<String>
-                    (
-                            "C004",
-                            "El Curso no existe",
-                            "El Curso no existe",
-                            null,
-                            null
-                    ),HttpStatus.BAD_REQUEST);
-        }
-        else
-        {
-            boolean eliminar =  _cursoService.delete(request.getIdCurso());
-
-            return new ResponseEntity<>( new BaseResponse<String>
-                    (
-                            "0",
-                            "El Curso fue eliminado correctamente",
-                            "El Curso fue eliminado correctamente",
-                            null,
-                            null
-                    ),HttpStatus.OK);
-        }
+        return new ResponseEntity<>( new BaseResponse<String>
+                (
+                        "0",
+                        "El Curso fue eliminado correctamente",
+                        "El Curso fue eliminado correctamente",
+                        null,
+                        null
+                ),HttpStatus.OK);
     }
     
 }
