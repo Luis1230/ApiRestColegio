@@ -18,6 +18,7 @@ import com.colegio.rest.apirestcolegio.mapper.MapperUtil;
 import com.colegio.rest.apirestcolegio.models.Curso;
 import com.colegio.rest.apirestcolegio.models.Estudiante;
 import com.colegio.rest.apirestcolegio.services.ICursoService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +50,7 @@ public class CursoController {
     }
 
     @PostMapping("/obtenerCurso")
-    public ResponseEntity<BaseResponse<ResponseObtenerCursoDto>> obtenerCurso(@RequestBody RequestObtenerCursoDto request) throws Exception
+    public ResponseEntity<BaseResponse<ResponseObtenerCursoDto>> obtenerCurso(@Valid @RequestBody RequestObtenerCursoDto request) throws Exception
     {
         Curso objCurso = _mapperUtil.map(request,Curso.class,"");
         objCurso = _cursoService.findById(objCurso.getIdCurso());
@@ -78,7 +79,7 @@ public class CursoController {
     }
 
     @PostMapping("/guardarCurso")
-    public ResponseEntity<BaseResponse<ResponseGuardarCursoDto>> guardarCurso(@RequestBody RequestGuardarCursoDto request) throws Exception
+    public ResponseEntity<BaseResponse<ResponseGuardarCursoDto>> guardarCurso(@Valid @RequestBody RequestGuardarCursoDto request) throws Exception
     {
         Curso objCurso = _mapperUtil.map(request,Curso.class,"");
         objCurso = _cursoService.save(objCurso);
@@ -107,7 +108,7 @@ public class CursoController {
     }
 
     @PostMapping("/actualizarCurso")
-    public ResponseEntity<BaseResponse<ResponseActualizarCursoDto>> actualizarCurso(@RequestBody RequestActualizarCursoDto request) throws Exception
+    public ResponseEntity<BaseResponse<ResponseActualizarCursoDto>> actualizarCurso(@Valid @RequestBody RequestActualizarCursoDto request) throws Exception
     {
         Curso objCurso = _cursoService.findById(request.getIdCurso());
 
@@ -139,7 +140,7 @@ public class CursoController {
     }
 
     @PostMapping("/eliminarCurso")
-    public ResponseEntity<BaseResponse<String>> actualizarCurso(@RequestBody RequestEliminarCursoDto request) throws Exception
+    public ResponseEntity<BaseResponse<String>> eliminarCurso(@Valid @RequestBody RequestEliminarCursoDto request) throws Exception
     {
         _cursoService.delete(request.getIdCurso());
 

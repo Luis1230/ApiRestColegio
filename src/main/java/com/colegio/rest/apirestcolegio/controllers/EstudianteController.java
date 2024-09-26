@@ -12,6 +12,7 @@ import com.colegio.rest.apirestcolegio.dto.estudiante.listarEstudiante.ResponseL
 import com.colegio.rest.apirestcolegio.mapper.MapperUtil;
 import com.colegio.rest.apirestcolegio.models.Estudiante;
 import com.colegio.rest.apirestcolegio.services.IEstudianteService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +44,7 @@ public class EstudianteController {
     }
 
     @PostMapping("/obtenerEstudiante")
-    public ResponseEntity<BaseResponse<ResponseObtenerEstudianteDto>> obtenerEstudiante(@RequestBody RequestObtenerEstudianteDto request) throws Exception
+    public ResponseEntity<BaseResponse<ResponseObtenerEstudianteDto>> obtenerEstudiante(@Valid @RequestBody RequestObtenerEstudianteDto request) throws Exception
     {
         Estudiante objEstudiante = _mapperUtil.map(request,Estudiante.class,"");
         objEstudiante = _estudianteService.findById(objEstudiante.getIdEstudiante());
@@ -72,7 +73,7 @@ public class EstudianteController {
     }
 
     @PostMapping("/guardarEstudiante")
-    public ResponseEntity<BaseResponse<ResponseGuardarEstudianteDto>> guardarEstudiante(@RequestBody RequestGuardarEstudianteDto request) throws Exception
+    public ResponseEntity<BaseResponse<ResponseGuardarEstudianteDto>> guardarEstudiante(@Valid @RequestBody RequestGuardarEstudianteDto request) throws Exception
     {
         Estudiante objEstudiante = _mapperUtil.map(request,Estudiante.class,"");
         objEstudiante = _estudianteService.save(objEstudiante);
@@ -101,7 +102,7 @@ public class EstudianteController {
     }
 
     @PostMapping("/actualizarEstudiante")
-    public ResponseEntity<BaseResponse<ResponseActualizarEstudianteDto>> actualizarEstudiante(@RequestBody RequestActualizarEstudianteDto request) throws Exception
+    public ResponseEntity<BaseResponse<ResponseActualizarEstudianteDto>> actualizarEstudiante(@Valid @RequestBody RequestActualizarEstudianteDto request) throws Exception
     {
         Estudiante objEstudiante = _estudianteService.findById(request.getIdEstudiante());
 
@@ -133,7 +134,7 @@ public class EstudianteController {
     }
   
     @PostMapping("/eliminarEstudiante")
-    public ResponseEntity<BaseResponse<String>> actualizarEstudiante(@RequestBody RequestEliminarEstudianteDto request) throws Exception
+    public ResponseEntity<BaseResponse<String>> actualizarEstudiante(@Valid @RequestBody RequestEliminarEstudianteDto request) throws Exception
     {
         _estudianteService.delete(request.getIdEstudiante());
         return new ResponseEntity<>( new BaseResponse<String>

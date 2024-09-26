@@ -13,6 +13,7 @@ import com.colegio.rest.apirestcolegio.models.Estudiante;
 import com.colegio.rest.apirestcolegio.models.Matricula;
 import com.colegio.rest.apirestcolegio.models.MatriculaDetalle;
 import com.colegio.rest.apirestcolegio.services.IMatriculaService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,7 +46,7 @@ public class MatriculaController {
     }
 
     @PostMapping("/guardarMatricula")
-    public ResponseEntity<BaseResponse<ResponseGuardarMatriculaDto>> guardarMatricula(@RequestBody RequestGuardarMatriculaDto request) throws Exception
+    public ResponseEntity<BaseResponse<ResponseGuardarMatriculaDto>> guardarMatricula(@Valid @RequestBody RequestGuardarMatriculaDto request) throws Exception
     {
         Matricula objMatricula = _mapperUtil.map(request,Matricula.class,"requestGuardarMatriculaMapper");
         objMatricula = _matriculaService.save(objMatricula);
