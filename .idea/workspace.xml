@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="787d6012-f83f-44c1-812e-4962cffac547" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/controllers/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/controllers/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/controllers/EstudianteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/controllers/EstudianteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/controllers/MatriculaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/controllers/MatriculaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/dto/curso/listarCurso/ResponseListarCursoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/dto/curso/listarCurso/ResponseListarCursoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/dto/estudiante/listarEstudiante/ResponseListarEstudianteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/colegio/rest/apirestcolegio/dto/estudiante/listarEstudiante/ResponseListarEstudianteDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/colegio/rest/apirestcolegio/controllers/EstudianteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/colegio/rest/apirestcolegio/controllers/EstudianteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/colegio/rest/apirestcolegio/models/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/colegio/rest/apirestcolegio/models/Curso.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
