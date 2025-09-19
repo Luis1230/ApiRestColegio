@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ResponseListarCursoDto {
 
+    private String idCurso;
     private String nombre;
     private String siglas;
     private boolean estado;

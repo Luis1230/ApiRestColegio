@@ -29,6 +29,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/cursos")
 @RequiredArgsConstructor
+@CrossOrigin(origins =  "*")
 public class CursoController {
 
     private final ICursoService _cursoService;

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ResponseListarEstudianteDto {
 
+    private String idEstudiante;
     private String nombres;
     private String apellidos;
     private String dni;

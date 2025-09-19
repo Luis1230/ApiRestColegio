@@ -23,6 +23,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/estudiantes")
 @RequiredArgsConstructor
+@CrossOrigin(origins =  "*")
 public class EstudianteController {
 
     private final IEstudianteService _estudianteService;

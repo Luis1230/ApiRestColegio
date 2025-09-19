@@ -25,6 +25,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/matriculas")
 @RequiredArgsConstructor
+@CrossOrigin(origins =  "*")
 public class MatriculaController {
 
     private final IMatriculaService _matriculaService;
