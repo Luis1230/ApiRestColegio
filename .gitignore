@@ -14,7 +14,7 @@
 **/.idea/uiDesigner.xml
 
 target/
-
+.idea/
 
 ## File-based project format:
 *.iws
